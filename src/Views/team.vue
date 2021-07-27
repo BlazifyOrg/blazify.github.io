@@ -23,7 +23,7 @@
                 <v-card-actions>
                   <v-btn
                     color="red"
-                    style="position: relative;bottom: 1;padding-left: 20%;padding-right: 20%; left: 25%;"
+                    style="position: relative;bottom: 1px;padding-left: 20%;padding-right: 20%; left: 25%;"
                     v-bind="attrs"
                     v-on="on"
                     >More</v-btn
@@ -32,9 +32,11 @@
               </v-card>
             </template>
             <v-card>
-              <v-toolbar color="primary">{{ member.name }}</v-toolbar>
+              <v-toolbar color="primary" flat>{{ member.name }}</v-toolbar>
               <v-card-text>
-                <div class="text-h2 pa-12">About</div>
+                <div class="text-h2 pa-6">About</div>
+                <p class="font-weight-light text-center font-italic">"{{member.long}}"
+                </p>
                 <v-chip-group column>
                   <v-chip
                     v-for="role in member.roles"
@@ -80,6 +82,7 @@ export default {
         dialog: false,
         image:
           "https://cdn.discordapp.com/attachments/713410105928056856/835597895696121866/IMG-20210111-WA0056.jpg",
+        long: "Hi, I'm Ronit \"RoMeAh\" Rahaman, a passionate self-taught backend and systems developer from West Bengal, India. Current Project I'm actively working on is Blazescript. Not to be mentioned I'm trash at front end... frowning_face",
         content:
           'Hi, I\'m Ronit "RoMeAh" Rahaman, a passionate self-taught backend developer from West Bengal, India.',
         socials: [
@@ -111,6 +114,7 @@ export default {
         content:
           "Hi there, I am Aron! I am a fullstack web developer and enjoy anything from electronics to animals :)",
         dialog: false,
+        long: "Borned and raised in the small Swedish town \"Skövde\" I got introduced to coding in 6th grade and fell in love with it. Two years later at the age of 14 I landed my first Fullstack Consult Job at MMR Solutions where I am currently working :)",
         socials: [
           {
             name: "Github",
@@ -136,12 +140,13 @@ export default {
       },
       {
         name: "Ratul Saha",
+        long: "I am a full-stack self-taught web developer from India. I am 17 years old and till date I have worked on various projects to build my knowledge and experience. Currently, I am looking for internships to further develop my skill-set and experience!",
         description: "Owner & Developer",
         image:
           "https://cdn.discordapp.com/attachments/693495170380857446/835847273098510336/53178362.png",
         dialog: false,
         content:
-          "I love designing minimal and simple yet classy apps and websites. Simplicity and minimalism is my style and I believe that it will be the future norm too."
+          "I love designing minimal and simple yet classy apps and websites. "
       }
     ]
   })

@@ -1,9 +1,9 @@
 <template>
   <div>
     <h1 class="text-center custom--title">{{ title }}</h1>
-    <h3 class="text-center custom--description" v-if="description">
+    <h2 class="text-center custom--description" v-if="description">
       {{ description }}
-    </h3>
+    </h2>
   </div>
 </template>
 
@@ -20,7 +20,7 @@ export default {
   text-shadow: 7px 7px rgba(165, 9, 9, 0.19);
   color: red;
   text-transform: uppercase;
-  font-size: 6em;
+  font-size: 12vw;
   font-weight: 100;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -30,7 +30,7 @@ export default {
   -o-animation: fadeIn linear 1s;
 }
 .custom--description {
-  font-family: Montserrat, Ubuntu;
+  font-family: Montserrat, Ubuntu,sans-serif;
   font-weight: 100;
   font-size: xx-large;
   animation: fadeIn linear 4s;

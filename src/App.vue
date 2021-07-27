@@ -1,3 +1,4 @@
+<!--suppress TypeScriptCheckImport -->
 <template>
   <v-app>
     <v-main>
@@ -9,7 +10,7 @@
           :light="!$vuetify.theme.dark"
           timeout="20000"
         >
-          Save theme, see more <router-link to="/theme-legal">here</router-link>
+          Save theme? See more <router-link to="/theme-legal">here</router-link>
           <template v-slot:action="{ attrs }">
             <v-btn
               text
@@ -28,9 +29,9 @@
       </div>
       <v-footer padless fixed>
         <v-col class="text-center" cols="12">
-          {{ "2020 - " + new Date().getFullYear() }} -
-          <strong class="red--text">Blazify</strong>
-          <v-icon class="float-right" @click="changeTheme"
+          {{ new Date().getFullYear() }} -
+          <strong>Blazify</strong>
+          <v-icon id="theme-changer" class="float-right" @click="changeTheme" :aria-label='!this.$vuetify.theme.dark ? "Enable Dark mode" : "Disable Dark Mode"'
             >mdi-theme-light-dark</v-icon
           >
         </v-col>
@@ -50,12 +51,17 @@ export default {
   components: {
     Navbar: () => import("@/components/Navbar")
   },
+  /*
+  For my own sake:
+  If theme = false dark mode is enabled
+   */
   methods: {
     changeTheme() {
       this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
       if (localStorage.getItem("theme")) this.save();
+      document.getElementById("theme-changer").ariaLabel = !this.$vuetify.theme.dark ? "Enable Dark mode" : "Disable Dark Mode"
       setTimeout(() => (this.snackbar = true), 1000);
-    },
+      },
     save() {
       localStorage.setItem("theme", `${!this.$vuetify.theme.dark}`);
     }
