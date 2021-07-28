@@ -1,5 +1,3 @@
+Sitemap: https://www.blazify.rocks/sitemap.txt
 User-agent: *
-Allow: /
-Allow: /team
-Allow: /projects
-Allow: /about
+Allow: *
