@@ -1,4 +1,3 @@
-<!--suppress TypeScriptCheckImport -->
 <template>
   <v-app>
     <v-main>
@@ -49,7 +48,7 @@ export default {
     showSnackbar: true
   }),
   components: {
-    Navbar: () => import("@/components/Navbar")
+    Navbar: () => import("@/components/Navbar.vue")
   },
   /*
   For my own sake:

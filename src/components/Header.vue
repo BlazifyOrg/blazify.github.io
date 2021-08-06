@@ -33,7 +33,7 @@ export default {
   font-family: Montserrat, Ubuntu,sans-serif;
   font-weight: 100;
   font-size: xx-large;
-  animation: fadeIn linear 4s;
+  animation: fadeIn linear 2s;
   opacity: 0;
   -webkit-animation: fadeIn linear 1s;
   -moz-animation: fadeIn linear 1s;
